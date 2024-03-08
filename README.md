@@ -58,15 +58,16 @@ Ekip üyeleri sorunlarla karşılaştıklarında Ekip Lideri veya grup içi ilet
 
 NAME | E-MAIL                      | GITHUB
 --- |-----------------------------| ---
-Elçin   | elcnburak@hotmail.com                  |https://github.com/elcnburak
-Serkan  | serkandastan@hotmail.com                           |https://github.com/serkandastan
-Alper    | a.d@mailbox.org                           |https://github.com/AlperDuman1
+Elçin   | elcnburak@hotmail.com       |https://github.com/elcnburak
+Serkan  | serkandastan@hotmail.com    |https://github.com/serkandastan
+Alper    | a.d@mailbox.org             |https://github.com/AlperDuman1
 Muharrem  | muharremyurtsever@gmail.com |https://github.com/trbozo
-Numeyre  | numeyra122@icloud.com                           |https://github.com/Numeyra
-Gülmira    | sidagulova@gmail.com                           |https://github.com/gu1mira
+Numeyre  | numeyra122@icloud.com       |https://github.com/Numeyra
+Gülmira    | sidagulova@gmail.com        |https://github.com/gu1mira
 Gizem  | G.kurtoglu77@gmail.com      |https://github.com/GizemEminoglu
-Kaan  | n.kaaneminoglu@gmail.com                           |https://github.com/kaaneminogluu
-Mehmet  | mehmetselek@live.nl                           |https://github.com/mrselek
+Kaan  | n.kaaneminoglu@gmail.com    |https://github.com/kaaneminogluu
+Mehmet  | mehmetselek@live.nl         |https://github.com/mrselek
+Evin | evin.ertases@gmail.com      |https://github.com/Evinevin1
 
 
 
