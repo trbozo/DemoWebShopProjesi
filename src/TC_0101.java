@@ -1,55 +1,55 @@
 import Utlity.BaseDriver;
 import Utlity.MyFunc;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class TC_0101 extends BaseDriver {
 
     @Test
     public void _US_201(){
 
-        driver.get("https://demowebshop.tricentis.com/");
+        try {
 
-        // List<WebElement> consent=driver.findElements(By.xpath("//*[text()='Tümünü Kabul Et']"));
-        // if(consent.size()>0)
-        //     consent.get(0).click();
+            driver.get("https://demowebshop.tricentis.com/");
 
 
-        WebElement register = driver.findElement(By.linkText("Register"));
-        register.click();
-        MyFunc.Bekle(3);
-
-        WebElement gender= driver.findElement(By.xpath("//input[@id='gender-female']"));
-        gender.click();
-        MyFunc.Bekle(3);
-
-        WebElement Firstname=driver.findElement(By.xpath("//input[@id='FirstName']"));
-        Firstname.sendKeys("test");
-        MyFunc.Bekle(3);
-
-        WebElement lastname=driver.findElement(By.xpath("//input[@id='LastName']"));
-        lastname.sendKeys("Tester");
-        MyFunc.Bekle(3);
-
-        WebElement email= driver.findElement(By.xpath("//input[@id='Email']"));
-        email.sendKeys("test123@gmail.com");
-
-        MyFunc.Bekle(3);
-        WebElement password= driver.findElement(By.xpath("//input[@id='Password']"));
-        password.sendKeys("Test123");
-
-        MyFunc.Bekle(3);
-        WebElement Confirmpassword= driver.findElement(By.xpath("//input[@id='ConfirmPassword']"));
-        Confirmpassword.sendKeys("Test123");
-
-        MyFunc.Bekle(3);
-        WebElement register1=driver.findElement(By.xpath("//input[@id='register-button']"));
-        register1.click();
-
-        BekleKapat();
+            WebElement registerButton = driver.findElement(By.linkText("Register"));
+            registerButton.click();
 
 
+            Actions actions = new Actions(driver);
+            WebElement firstName = driver.findElement(By.id("FirstName"));
+            WebElement lastName = driver.findElement(By.id("LastName"));
+            WebElement maleRadioButton = driver.findElement(By.id("gender-female"));
+            WebElement email = driver.findElement(By.id("Email"));
+            WebElement password = driver.findElement(By.id("Password"));
+            WebElement confirmPassword= driver.findElement(By.id("ConfirmPassword"));
+            WebElement registerButton2 = driver.findElement(By.id("register-button"));
+            MyFunc.Bekle(3);
+            actions.moveToElement(firstName)
+                    .click()
+                    .sendKeys("test")
+                    .sendKeys(Keys.TAB)
+                    .sendKeys("Tester")
+                    .sendKeys(Keys.TAB)
+                    .click(maleRadioButton)
+                    .sendKeys(Keys.TAB)
+                    .sendKeys("test123@gmail.com")
+                    .sendKeys(Keys.TAB)
+                    .sendKeys("Test123")
+                    .sendKeys(Keys.TAB)
+                    .sendKeys("Test123")
+                    .sendKeys(Keys.TAB)
+                    .click(registerButton2)
+                    .perform();
 
+        } finally {
+            driver.quit();
+        }
     }
+
 }
 
