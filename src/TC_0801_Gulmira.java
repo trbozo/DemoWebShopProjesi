@@ -75,22 +75,29 @@ public class TC_0801_Gulmira extends BaseDriver {
                 .build()
                 .perform();
 
-        WebElement notebook14Inch= driver.findElement(By.xpath("//*[text()='14.1-inch Laptop']"));
-        MyFunc.Bekle(3);
-
-        new Actions(driver)
+        WebElement notebook14Inch= driver.findElement(By.xpath("//*[@class='product-title']/a"));
+               new Actions(driver)
                 .moveToElement(notebook14Inch)
                 .click()
                 .build()
                 .perform();
 
+        MyFunc.Bekle(3);
+                new Actions(driver).
+                scrollByAmount(0,500).
+                build().
+                perform();
 
+        //Step 4. On the product page, click the "Add to Cart" button to add the product to the basket.
+        WebElement addToCart= driver.findElement(By.xpath("//*[@id='add-to-cart-button-31']"));
+        MyFunc.Bekle(3);
 
+        new Actions(driver)
+                .moveToElement(addToCart)
+                .click()
+                .build()
+                .perform();
 
-
-
-//        4. On the product page, click the "Add to Cart" button to add
-//        the product to the basket.
 //        5. Click the "Shopping Cart" button to navigate to your
 //        basket.
 //        6. Click the "Apply Coupon" button (Use Coupon) (click on
