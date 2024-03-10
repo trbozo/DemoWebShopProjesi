@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 
 public class TC_0801_Gulmira extends BaseDriver {
     @Test
@@ -138,9 +139,37 @@ public class TC_0801_Gulmira extends BaseDriver {
         MyFunc.Bekle(2);
         Assert.assertTrue("There is no message", GiftCardMessage.getText().contains("The coupon code you entered couldn't be applied to your order"));
         //Step 10. Fill the necessary information for the cargo details:
+
         //Step 11. Choose a country and state.
+        WebElement country= driver.findElement(By.id("CountryId"));
+        Select webCountry=new Select(country);
+        webCountry.selectByVisibleText("Kazakhstan");
+
+        WebElement state= driver.findElement(By.id("StateProvinceId"));
+        MyFunc.Bekle(1);
+        Select webState=new Select(state);
+        webState.selectByValue("0");
+
         //Step 12. Accept the conditions.
+        WebElement checkBox= driver.findElement(By.id("termsofservice"));
+        MyFunc.Bekle(3);
+
+        new Actions(driver)
+                .moveToElement(checkBox)
+                .click()
+                .build()
+                .perform();
+
         //Step 13. Click the "Checkout" (payment) button to navigate to the payment page.
+        WebElement checkout=driver.findElement(By.id("checkout"));
+        MyFunc.Bekle(3);
+
+        new Actions(driver)
+                .moveToElement(checkout)
+                .click()
+                .build()
+                .perform();
+
         //Step 14. Fill the payment information and confirm the order.
         //Step 15. "Your order has been successfully processed!" Verify that the message is displayed.
 
