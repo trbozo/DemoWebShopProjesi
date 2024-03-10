@@ -2,6 +2,7 @@ import Utlity.BaseDriver;
 import Utlity.MyFunc;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
@@ -22,13 +23,36 @@ public class TC_0801_Gulmira extends BaseDriver {
         aksiyon.perform();
 
         WebElement email= driver.findElement(By.xpath("//input[@id='Email']"));
-        email.sendKeys("test123@gmail.com");
+        MyFunc.Bekle(3);
 
+        new Actions(driver)
+                .moveToElement(email)
+                .click()
+                .sendKeys("ahmet@mail.ru")
+                .build()
+                .perform();
 
+        WebElement password= driver.findElement(By.xpath("//input[@id='Password']"));
+        MyFunc.Bekle(3);
 
+        new Actions(driver)
+                .moveToElement(password)
+                .click()
+                .keyDown(Keys.SHIFT)
+                .sendKeys("a")
+                .keyUp(Keys.SHIFT)
+                .sendKeys("hmet123")
+                .build()
+                .perform();
 
-//        WebElement email= driver.findElement(By.xpath("test123@gmail.com"));
-//        email.sendKeys("test123@gmail.com");
+        WebElement logginButton= driver.findElement(By.xpath("//*[@class='button-1 login-button']"));
+        MyFunc.Bekle(3);
+
+        new Actions(driver)
+                .moveToElement(logginButton)
+                .click()
+                .build()
+                .perform();
 
 
 
