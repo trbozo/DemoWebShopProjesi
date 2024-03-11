@@ -54,9 +54,22 @@ public class TC_20901_Gulmira extends BaseDriver {
                 .build()
                 .perform();
 
-    //Step 3. Navigate to the "My Account" page by clicking on your username or e-mail address on the homepage.
-    //Step 4. View your orders by clicking on the "Orders" (Orders) link.
-    //Step 5. Click the "Details" link of the order (or Enson order) you want to view.
-    //Step 6. Download and view the invoice by clicking on the PDF Invioice link.
+        //Step 3. Navigate to the "My Account" page by clicking on your username or e-mail address on the homepage.
+        WebElement myAccount= driver.findElement(By.xpath("(//*[@class='account'])[1]"));
+        MyFunc.Bekle(3);
+
+        new Actions(driver)
+                .moveToElement(myAccount)
+                .click()
+                .build()
+                .perform();
+
+
+
+        //Step 4. View your orders by clicking on the "Orders" (Orders) link.
+        //Step 5. Click the "Details" link of the order (or Enson order) you want to view.
+        //Step 6. Download and view the invoice by clicking on the PDF Invioice link.
+
+        BekleKapat();
     }
 }
