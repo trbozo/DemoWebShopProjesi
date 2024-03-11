@@ -11,10 +11,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class TC_20901_Gulmira extends BaseDriver {
     @Test
     public void test9(){
-    //Step 1. Open the web browser and navigate to "Demowebshop.tricentis.com".
+        //Step 1. Open the web browser and navigate to "Demowebshop.tricentis.com".
         driver.get("https://demowebshop.tricentis.com/");
         wait.until(ExpectedConditions.urlToBe("https://demowebshop.tricentis.com/"));
-    //Step 2. If the user session is not open, log in (login).
+        //Step 2. If the user session is not open, log in (login).
         WebElement loginLink= driver.findElement(By.xpath("//*[text()='Log in']"));
         Actions aksiyonlar=new Actions(driver); //// web sayfası aksiyonlara açıldı.
 
@@ -66,7 +66,6 @@ public class TC_20901_Gulmira extends BaseDriver {
         //Step 4. View your orders by clicking on the "Orders" (Orders) link.
         WebElement orders= driver.findElement(By.xpath("(//*[@href='/customer/orders'])[1]"));
         MyFunc.Bekle(3);
-        //wait.until(ExpectedConditions.invisibilityOf(orders));
 
         new Actions(driver)
                 .moveToElement(orders)
@@ -77,7 +76,27 @@ public class TC_20901_Gulmira extends BaseDriver {
 
 
         //Step 5. Click the "Details" link of the order (or Enson order) you want to view.
-        //Step 6. Download and view the invoice by clicking on the PDF Invioice link.
+        WebElement firstOrder= driver.findElement(By.xpath("(//*[@class='button-2 order-details-button'])[1]"));
+        MyFunc.Bekle(3);
+
+        new Actions(driver)
+                .moveToElement(firstOrder)
+                .click()
+                .build()
+                .perform();
+
+
+        //Step 6. Download and view the invoice by clicking on the PDF Invoice link.
+        WebElement pdfInvoice= driver.findElement(By.xpath("//*[text()='PDF Invoice']"));
+        MyFunc.Bekle(3);
+
+        new Actions(driver)
+                .moveToElement(pdfInvoice)
+                .click()
+                .build()
+                .perform();
+
+
 
         BekleKapat();
     }
