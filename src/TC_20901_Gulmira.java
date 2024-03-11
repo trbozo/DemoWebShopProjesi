@@ -63,10 +63,19 @@ public class TC_20901_Gulmira extends BaseDriver {
                 .click()
                 .build()
                 .perform();
-
-
-
         //Step 4. View your orders by clicking on the "Orders" (Orders) link.
+        WebElement orders= driver.findElement(By.xpath("(//*[@href='/customer/orders'])[1]"));
+        MyFunc.Bekle(3);
+        //wait.until(ExpectedConditions.invisibilityOf(orders));
+
+        new Actions(driver)
+                .moveToElement(orders)
+                .click()
+                .build()
+                .perform();
+
+
+
         //Step 5. Click the "Details" link of the order (or Enson order) you want to view.
         //Step 6. Download and view the invoice by clicking on the PDF Invioice link.
 
