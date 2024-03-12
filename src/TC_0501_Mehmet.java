@@ -78,7 +78,7 @@ public class TC_0501_Mehmet extends BaseDriver {
         WebElement Emaill4= driver.findElement(By.xpath("//input[@id='Email']"));
         Emaill4.sendKeys("");
 
-        MyFunc.Bekle(1);
+        MyFunc.Bekle(2);
         WebElement passW4= driver.findElement(By.xpath("//input[@id='Password']"));
         passW4.sendKeys("Tester123456");
 
