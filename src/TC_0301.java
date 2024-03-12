@@ -35,7 +35,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
                 System.out.println("3. Adım: Kullanıcı adı görünmedi - Test başarısız!");
             }
 
-            // 4. Adım: "Logout" veya "Çıkış" bağlantısına tıklayarak oturumu kapatma
             WebElement logoutLink = driver.findElement(By.className("ico-logout"));
             logoutLink.click();
 
