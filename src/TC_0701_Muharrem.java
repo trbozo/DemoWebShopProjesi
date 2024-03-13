@@ -1,5 +1,6 @@
 import Utlity.BaseDriver;
 import Utlity.MyFunc;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -10,13 +11,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class TC_0701_Muharrem extends BaseDriver {
 
-    //1. Web tarayıcısını açın ve "demowebshop.tricentis.com" adresine gidin.
-    //2. Eğer kullanıcı oturumu açık değilse, oturum açın (giriş yapın).
-    //3. Anasayfada "Do you like nopCommerce?" sorusuna yanıtlayın.
-    //4. Oylama için "Excellent" (Mükemmel) seçeneğini seçin. 5. Oy vermek için ilgili düğmeye tıklayın.
-
     @Test
-    public void Test0701(){
+    public void Test701(){
 
 
         //1. Web tarayıcısını açın ve "demowebshop.tricentis.com" adresine gidin.
@@ -64,6 +60,34 @@ public class TC_0701_Muharrem extends BaseDriver {
                 .perform();
 
         //3. Anasayfada "Do you like nopCommerce?" sorusuna yanıtlayın.
+        //4. Oylama için "Excellent" (Mükemmel) seçeneğini seçin. 5. Oy vermek için ilgili düğmeye tıklayın.
+
+        WebElement pollFind= driver.findElement(By.xpath("//input[@id=\"pollanswers-1\"]"));
+        MyFunc.Bekle(3);
+
+        new Actions(driver)
+                .moveToElement(pollFind)
+                .click()
+                .build()
+                .perform();
+
+        WebElement voteClick= driver.findElement(By.xpath("//input[@id=\"vote-poll-1\"]"));
+        MyFunc.Bekle(3);
+
+        new Actions(driver)
+                .moveToElement(voteClick)
+                .click()
+                .build()
+                .perform();
+
+
+        //5. Oy vermek için Vote ye tıklayın.
+        WebElement voteMsg= driver.findElement(By.xpath("//*[@class=\"poll-total-votes\"]"));
+        MyFunc.Bekle(2);
+        Assert.assertTrue("Only registered users can vote", voteMsg.getText().contains("vote(s)..."));
+
+        BekleKapat();
+
 
 
     }
